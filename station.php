@@ -37,7 +37,7 @@
     .logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--green-deep));display:grid;place-items:center;box-shadow:var(--shadow-sm)}
     .logo span{font-size:18px;font-weight:900;color:white}
     .menu{display:flex;gap:18px}
-    .menu a{opacity:.92; padding:10px 0;}
+    .menu a{opacity:.92; padding:10px 0; margin-right:5px;}
     .cta{background:var(--blue);color:#fff;padding:10px 16px;border-radius:14px;font-weight:600;box-shadow:var(--shadow-sm);border:1px solid rgba(255,255,255,.08)}
     .cta:hover{transform:translateY(-1px);background:linear-gradient(135deg,var(--blue),var(--green-deep))}
 
@@ -104,7 +104,8 @@
         <a href="#tinh-nang">Tính năng</a>
         <a href="#goi-phi">Gói phí</a>
         <a href="#lien-he">Liên hệ</a>
-        <a class="cta" href="#dang-ky">Dùng thử miễn phí</a>
+        <a href="#dang-nhap" class="btn ghost">Đăng nhập</a>
+        <a class="cta" href="#dang-ky" style="margin-left:auto;">Dùng thử miễn phí</a>
       </nav>
     </div>
   </header>
@@ -223,6 +224,10 @@
       </form>
     </div>
   </section>
+
+  
+
+  
 
   <footer>
     <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
