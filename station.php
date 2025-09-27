@@ -10,14 +10,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --blue: #2563eb;           /* xanh dương chủ đạo */
+      --blue: #2563eb;
       --blue-700:#1d4ed8;
-      --green: #a7f3d0;          /* xanh lá nhạt (mint) */
-      --green-deep:#10b981;      /* xanh lá đậm cho hover */
-      --bg:   #0b1220;           /* nền đen xanh */
-      --text: #e5ecff;           /* chữ sáng */
-      --muted:#94a3b8;           /* chữ phụ */
-      --card:#0f172a80;          /* nền thẻ trong suốt */
+      --green: #a7f3d0;
+      --green-deep:#10b981;
+      --bg:   #0b1220;
+      --text: #e5ecff;
+      --muted:#94a3b8;
+      --card:#0f172a80;
       --stroke: rgba(167,243,208,.18);
       --radius-xl: 1.25rem;
       --radius-lg: .9rem;
@@ -29,17 +29,6 @@
     html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
     a{color:var(--green-deep);text-decoration:none}
     .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
-
-    /* Header */
-    header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(10px);background:rgba(11,18,32,.65);border-bottom:1px solid rgba(167,243,208,.15);z-index:20}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.3px}
-    .logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--green-deep));display:grid;place-items:center;box-shadow:var(--shadow-sm)}
-    .logo span{font-size:18px;font-weight:900;color:white}
-    .menu{display:flex;gap:18px}
-    .menu a{opacity:.92; padding:10px 0; margin-right:5px;}
-    .cta{background:var(--blue);color:#fff;padding:10px 16px;border-radius:14px;font-weight:600;box-shadow:var(--shadow-sm);border:1px solid rgba(255,255,255,.08)}
-    .cta:hover{transform:translateY(-1px);background:linear-gradient(135deg,var(--blue),var(--green-deep))}
 
     /* Hero */
     .hero{position:relative;padding:72px 0 36px;overflow:hidden}
@@ -91,25 +80,8 @@
   </style>
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"><span>ES</span></div>
-        <div>
-          <div style="font-weight:800">EduStation</div>
-          <div style="font-size:12px;color:var(--muted)">Học tương tác, hiểu bản chất</div>
-        </div>
-      </div>
-      <nav class="menu" aria-label="Main">
-        <a href="#tinh-nang">Tính năng</a>
-        <a href="#goi-phi">Gói phí</a>
-        <a href="#lien-he">Liên hệ</a>
-        <a href="#dang-nhap" class="btn ghost">Đăng nhập</a>
-        <a class="cta" href="#dang-ky" style="margin-left:auto;">Dùng thử miễn phí</a>
-      </nav>
-    </div>
-  </header>
-
+  <?php include 'header.php'; ?>
+  <!-- Hero -->
   <section class="hero">
     <div class="bg-grad" aria-hidden="true"></div>
     <div class="container hero-grid">
@@ -141,6 +113,7 @@
     </div>
   </section>
 
+  <!-- Features -->
   <section id="tinh-nang" class="features">
     <div class="container">
       <h2 style="margin:0 0 14px">Tính năng nổi bật</h2>
@@ -164,6 +137,7 @@
     </div>
   </section>
 
+  <!-- Pricing -->
   <section id="goi-phi" class="pricing">
     <div class="container">
       <h2 style="margin:0 0 14px">Gói phí</h2>
@@ -175,7 +149,7 @@
             <li>Bài học demo</li>
             <li>Không giới hạn thời gian</li>
           </ul>
-          <a class="btn ghost" href="#dang-ky">Dùng thử</a>
+          <a class="btn ghost" href="dowload.php">Dùng thử</a>
         </div>
         <div class="price" style="border-color:rgba(37,99,235,.45)">
           <div class="tag">Pro</div>
@@ -184,7 +158,7 @@
             <li>Gamification &amp; bảng xếp hạng</li>
             <li>Phân tích cá nhân hóa</li>
           </ul>
-          <a class="btn primary" href="#dang-ky">Mua ngay</a>
+          <a class="btn primary" href="buy.php">Mua ngay</a>
         </div>
         <div class="price">
           <div class="tag">Trường học</div>
@@ -199,6 +173,7 @@
     </div>
   </section>
 
+  <!-- Contact -->
   <section id="lien-he" class="contact">
     <div class="container">
       <h2 style="margin:0 0 14px">Liên hệ</h2>
@@ -225,14 +200,11 @@
     </div>
   </section>
 
-  
-
-  
-
+  <!-- Footer -->
   <footer>
     <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
       <small>© <span id="y"></span> EduStation. All rights reserved.</small>
-      <small>Theme: Xanh dương + Xanh lá nhạt.</small>
+      <small>Theme: Học không chỉ để nhớ mà học là để hiểu.</small>
     </div>
   </footer>
 
@@ -242,24 +214,24 @@
 
     // Xử lý form (demo, không gửi thật)
     const form = document.getElementById('contact-form');
-    const notice = document.getElementById('notice');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const data = new FormData(form);
-      if (data.get('website')) { // honeypot
-        notice.textContent = 'Có lỗi xảy ra. Vui lòng thử lại.';
-        return;
-      }
-      const name = (data.get('name')||'').trim();
-      const email = (data.get('email')||'').trim();
-      const msg = (data.get('message')||'').trim();
-      if (!name || !email || !msg) {
-        notice.textContent = 'Vui lòng điền đầy đủ thông tin.';
-        return;
-      }
-      notice.textContent = '✅ Cảm ơn bạn! Thông tin đã được gửi (demo).';
-      form.reset();
-    });
+    if(form){
+      const notice = document.getElementById('notice');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        if (data.get('website')) {
+          notice.textContent = 'Có lỗi xảy ra. Vui lòng thử lại.'; return;
+        }
+        const name = (data.get('name')||'').trim();
+        const email = (data.get('email')||'').trim();
+        const msg = (data.get('message')||'').trim();
+        if (!name || !email || !msg) {
+          notice.textContent = 'Vui lòng điền đầy đủ thông tin.'; return;
+        }
+        notice.textContent = '✅ Cảm ơn bạn! Thông tin đã được gửi .';
+        form.reset();
+      });
+    }
   </script>
 </body>
 </html>
